@@ -1,0 +1,61 @@
+
+body {
+    background: black;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight:500;
+}
+
+.glitch {
+    color: white;
+    border: 4px dashed rgb(6, 145, 6);
+    font-size: 98px;
+    position: relative;
+    width: 690px;
+    padding: 10px 20px 0px 20px;
+    margin: auto;
+    text-align: center;
+}
+
+@keyframes noise-anim {
+    $steps: 30;
+    @for $i from 0 through $steps {
+        #{percentage($i * (1/$steps))} {
+            clip:rect(random(500) + px, 9999px, random(500) + px, 0);
+        }
+    }
+}
+
+.glitch:after {
+    content: attr(data-text);
+    position: absolute;
+    left: 2px;
+    text-shadow: -3px 0 rgb(18, 18, 237);
+    top: 0;
+    color: white;
+    background: black;
+    overflow: hidden;
+    clip: rect(0, 900px, 0, 0);
+    animation: noise-anim 2.3s infinite linear alternate-reverse;
+}
+
+@keyframes noise-anim-2 {
+    $steps: 20;
+    @for $i from 0 through $steps {
+        #{percentage($i * (1/$steps))} {
+            clip: rect(random(400) + px, 9999px, random(400) + px, 0);
+        }
+    }
+}
+
+.glitch:before {
+    content: attr(data-text);
+    position: absolute;
+    left: -2px;
+    text-shadow: 1px 0 blue;
+    top: 0;
+    color: white;
+    background: black;
+    overflow: hidden;
+    clip: rect(0, 900px, 0, 0);
+    animation: noise-anim-2 2.3s infinite linear alternate-reverse;
+}
