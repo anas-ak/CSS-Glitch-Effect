@@ -5,13 +5,17 @@ body {
     font-weight:500;
 }
 
+.bar {
+    height: 170px;
+}
+
 .glitch {
     color: white;
     border: 4px dashed rgb(6, 145, 6);
     font-size: 98px;
     position: relative;
     width: 690px;
-    padding: 10px 20px 0px 20px;
+    padding: 20px 20px 0px 20px;
     margin: auto;
     text-align: center;
 }
